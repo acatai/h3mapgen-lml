@@ -5,7 +5,7 @@ Part of the Heroes 3 Map Generator: Logic Map Layout generation.
 
 
 ## Wymagania
-- Lua - pisałem pod [standardową 5.3](https://www.lua.org/download.html), natomiast docelowo raczej chcielibyśmy korzystać z [LuaJIT](http://luajit.org/download.html) (program chyba jest kompatybilny, jak coś to są drobiazgi ktore potem poprawię) 
+- Lua - pisałem pod [standardową 5.3](https://www.lua.org/download.html), natomiast docelowo raczej chcielibyśmy korzystać z [LuaJIT](http://luajit.org/download.html) (program jest kompatybilny) 
 - [Graphviz](http://www.graphviz.org/) - do rysowania grafów (polecenie `dot` powinno być w PATH)
 
 #### IDE
