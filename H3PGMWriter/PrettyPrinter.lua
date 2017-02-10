@@ -29,17 +29,17 @@ function PrettyPrinter.prettyprinter(item, level, iskey)
     else return 'false' end
   elseif type(item) == 'table' then
     local tab = {}
-    if level > 0 then tab[1] = '\n'..indent:rep(level-1)..'{\n' end
+    if level > 0 then tab[1] = '\n'..indent:rep(level)..'{\n' end -- alternatively: level - 1
     
       for k, v in pairs(item) do
         local keystring = type(k) == 'string'
-        if level > 0 then tab[#tab+1] = indent:rep(level+1).. (keystring and '' or '[') end
+        if level > 0 then tab[#tab+1] = indent:rep(level+1).. (keystring and '' or '[') end -- alternatively: level - 1
         tab[#tab+1] = PrettyPrinter.prettyprinter(k, level, true)..(keystring and ' = ' or '] = ')
         tab[#tab+1] = PrettyPrinter.prettyprinter(v, level+1)
-        tab[#tab+1] = ',\n'
+        tab[#tab+1] = level > 0 and ',\n' or '\n\n'
       end
 
-    if level > 0 then tab[#tab+1] = indent:rep(level-1)..'}' end
+    if level > 0 then tab[#tab+1] = indent:rep(level)..'}' end -- alternatively: level - 1
     --tab[#tab+1] = '\n'
     return table.concat(tab)
   else

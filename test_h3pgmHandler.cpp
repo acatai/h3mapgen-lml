@@ -224,6 +224,11 @@ int main(int argc, char **argv)
   
   LuaWrap_close(H3PGMWriter);
   
+  cout << ">> Reread Tests:" << endl;
+  
+  lua_State* H3PGMReader2 = LuaWrap_load("out_mapsaves/test_2.h3pgm");
+  LuaWrap_close(H3PGMReader2);
+  cout << "> Still alive :-)" << endl;
   
   return 0;
 }
