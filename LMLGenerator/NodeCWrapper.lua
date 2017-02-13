@@ -1,0 +1,4 @@
+--- This is just temporary wrapper to check if I can run generator and expose results to C
+-- @class table
+-- @name NodeCWrapper
+--

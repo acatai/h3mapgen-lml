@@ -1,24 +1,14 @@
+local ConfigReader = require 'Configs/ConfigReader'
 local PrettyPrinter = require 'H3PGMWriter/PrettyPrinter'
 
 
-data = {}
+local data = {} -- stores all mapsave data 
 
 
 --- Reads existing mapsave and puts loaded values into data
 -- @param filepath The path to existing mapsave file
-function read(filepath)
-  local f,e = loadfile(filepath)
-  if f==nil then
-    error ("LUA ERROR: H3PMGWriter.read:"..e)
-    return
-  end
-  -- clever trick below ;-)
-  setfenv(f, data) -- https://www.lua.org/manual/5.1/manual.html#pdf-setfenv 
-  local ok,e = pcall(f)
-  if not ok then
-    error ("LUA ERROR: H3PMGWriter.read:"..e)
-    return
-  end
+function load(filepath)
+  data = ConfigReader.read(filepath)
   print ('< InLua, loaded: '..filepath)
 end
 
@@ -38,7 +28,7 @@ end
 
 --- Saves mapsave to the file (owerwriting all) in pretty-printed form
 -- @param The path to new mapdump file
-function write(filepath)
+function save(filepath)
   local pp = PrettyPrinter.prettyprinter(data)
   --print (PrettyPrinter.prettyprinter(data))
   local file = io.open(filepath, "w")

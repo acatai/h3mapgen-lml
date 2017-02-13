@@ -1,5 +1,5 @@
-local GL = require('../LMLLib/GrammarLib')
-local Node = require('../LMLLib/Node')
+local GL = require('../LMLGenerator/GrammarLib')
+local Node = require('../LMLGenerator/Node')
 
 Grammar = 
 {

@@ -1,15 +1,36 @@
 # h3mapgen-lml
-Part of the Heroes 3 Map Generator: Logic Map Layout generation.
+Part of the Heroes 3 Procedural Map Generator: Logic Map Layout generation.
+
+
+# Aktualności
+
+## Instrukcja obsługi
+
+- Do uruchomienia wymagana [LuaJIT](http://luajit.org/download.html) - download i instalacja zgodnie z instrukcją ( na linuxie generalnie `make && sudo make install`)
+- Na linuxie powinno się kompilowac po uruchomieniu [compile.sh](compile.sh), g++ musi mieć ścieżki do bibliotek i headerów
+- Do rysowania grafów [Graphviz](http://www.graphviz.org/)
+
+(Jeśli ktoś chce do Lua jakieś podstawowe IDE nie będące notepadem to proponuję [ZeroBrane Studio](https://studio.zerobrane.com/).)
+
+## Co jak działa
+
+- testowy program sprawdza zapis/odczyt z plików mapsave (.h3pgm - tak naprawdę to .lua) i rysuje wygenerowany graf.
+- [test.h3pgh](out_mapsaves/test.h3pgh) zawiera stan początkowy generatora oraz seed. Jeśli seed jest < 0 to seedem jest time.
+- grafy są generowane do folderu [LMLGenerator\debug_graphs](LMLGenerator\debug_graphs)
+- dodatkowo w [Configs](Configs) znajdują się pliki .cfg z opcjami (na razie jest ich niewiele)
+
+## Nad czym teraz trwają prace
+
+- rozbudowanie generatora
+- przekazanie wynikowej struktury LML do c++
 
 
 
 
-## Wymagania
-- Lua - pisałem pod [standardową 5.3](https://www.lua.org/download.html), natomiast docelowo raczej chcielibyśmy korzystać z [LuaJIT](http://luajit.org/download.html) (program jest kompatybilny) 
-- [Graphviz](http://www.graphviz.org/) - do rysowania grafów (polecenie `dot` powinno być w PATH)
 
-#### IDE
-Jeśli ktoś chce jakieś podstawowe IDE nie będące notepadem to proponuję [ZeroBrane Studio](https://studio.zerobrane.com/).
+
+# Stare info (częściowo wciąż aktualne):
+
 
 
 ## Uruchamianie

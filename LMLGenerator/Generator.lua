@@ -1,4 +1,4 @@
-local GrammarLib = require('LMLLib/GrammarLib')
+local GrammarLib = require('LMLGenerator/GrammarLib')
 
 --- Can apply grammar rules to work-in-progress LML
 -- @class table
