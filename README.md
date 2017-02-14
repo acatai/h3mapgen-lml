@@ -15,7 +15,7 @@ Part of the Heroes 3 Procedural Map Generator: Logic Map Layout generation.
 ## Co jak działa
 
 - testowy program sprawdza zapis/odczyt z plików mapsave (.h3pgm - tak naprawdę to .lua) i rysuje wygenerowany graf.
-- [test.h3pgh](out_mapsaves/test.h3pgh) zawiera stan początkowy generatora oraz seed. Jeśli seed jest < 0 to seedem jest time.
+- [test.h3pgm](out_mapsaves/test.h3pgm) zawiera stan początkowy generatora oraz seed. Jeśli seed jest < 0 to seedem jest time.
 - grafy są generowane do folderu [LMLGenerator\debug_graphs](LMLGenerator\debug_graphs)
 - dodatkowo w [Configs](Configs) znajdują się pliki .cfg z opcjami (na razie jest ich niewiele)
 
